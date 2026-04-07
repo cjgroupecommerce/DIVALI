@@ -1,0 +1,160 @@
+/* ============================================
+   AeroSpace™ — Premium Travel Brand Architecture
+   ============================================ */
+
+:root {
+    /* Brand Colors */
+    --brand-navy: #1A2B45;        /* Deep Aviation Blue */
+    --brand-blue: #2B6CB0;        /* Sky Blue Accent */
+    --brand-orange: #FF7B39;      /* Action Orange (Best for CR) */
+    --brand-white: #FFFFFF;
+    --brand-off-white: #F9FAFB;
+    --brand-border: #E2E8F0;
+    
+    /* Functional Tokens */
+    --text-main: #2D3748;
+    --text-muted: #718096;
+    --success: #38A169;
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--brand-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.section-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Navbar */
+.navbar {
+    position: fixed; top: 0; left: 0; width: 100%; height: 72px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--brand-border);
+    z-index: 1000;
+}
+.nav-container { display: flex; align-items: center; justify-content: space-between; height: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.nav-logo { font-weight: 800; font-size: 1.4rem; color: var(--brand-navy); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-main); }
+.nav-cta { background: var(--brand-navy); color: white; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
+
+/* Hero Section */
+.hero { padding: 140px 0 80px; background: radial-gradient(circle at 100% 0%, #f0f7ff, #ffffff); }
+.hero-main { display: flex; align-items: center; gap: 60px; }
+.hero-text { flex: 1.2; }
+.hero-badge { display: inline-block; background: #EBF8FF; color: var(--brand-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--brand-navy); }
+.hero p { font-size: 1.2rem; color: var(--brand-slate); margin-bottom: 30px; }
+.hero-bullets { margin-bottom: 32px; list-style: none; }
+.hero-bullets li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 500; }
+.bullet-icon { color: var(--brand-blue); }
+.hero-image { flex: 1; }
+.hero-image img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); transition: var(--transition); }
+
+/* Trust Bar */
+.trust-bar { background: var(--brand-navy); color: white; padding: 15px 0; font-size: 0.8rem; font-weight: 500; }
+.trust-container { display: flex; justify-content: space-around; flex-wrap: wrap; }
+
+/* Table Comparison */
+.size-table { padding: 80px 0; background: var(--brand-off-white); }
+.table-wrapper { margin-top: 40px; overflow-x: auto; }
+.comparison-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
+.comparison-table th, .comparison-table td { padding: 20px; text-align: left; border-bottom: 1px solid #edf2f7; }
+.comparison-table th { background: var(--brand-navy); color: white; border: none; font-weight: 600; }
+
+/* BUNDLE SELECTOR (HORIZONTAL) */
+.buy-section { padding: 90px 0; }
+.bundle-selector-horizontal { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+.bundle-box {
+    display: flex; justify-content: space-between; align-items: center;
+    border: 2px solid var(--brand-border); border-radius: 16px; padding: 24px;
+    cursor: pointer; position: relative; transition: var(--transition);
+}
+.bundle-box:hover { border-color: var(--brand-blue); background: #fafafe; }
+.bundle-box.active { border-color: var(--brand-blue); background: #F0F7FF; box-shadow: 0 4px 20px rgba(43, 108, 176, 0.1); }
+
+.bundle-content h4 { font-size: 1.25rem; margin-bottom: 4px; }
+.composition { font-weight: 700; color: var(--brand-blue); font-size: 0.85rem; margin-bottom: 4px; }
+.description { font-size: 0.85rem; color: var(--text-muted); }
+
+.bundle-price { text-align: right; }
+.price { display: block; font-size: 1.5rem; font-weight: 800; color: var(--brand-navy); }
+.save-percent { display: inline-block; background: var(--success); color: white; font-size: 0.65rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-top: 4px; }
+
+/* Bundle Tags */
+.bundle-tag-premium, .bundle-tag-savings {
+    position: absolute; top: -12px; left: 24px;
+    padding: 3px 12px; border-radius: 99px; font-size: 0.65rem; font-weight: 800; color: white;
+}
+.bundle-tag-premium { background: var(--brand-blue); }
+.bundle-tag-savings { background: var(--brand-orange); }
+
+/* Selection Footer */
+.selection-footer { text-align: center; }
+.shipping-info { margin-top: 16px; font-size: 0.85rem; color: var(--text-muted); }
+.guarantee-box {
+    margin-top: 40px; display: flex; align-items: center; gap: 16px;
+    background: #fdf6f2; border: 1px dashed var(--brand-orange);
+    padding: 20px; border-radius: 12px; text-align: left;
+}
+.guarantee-icon { font-size: 1.5rem; }
+
+/* Buttons */
+.btn { border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; }
+.btn-primary { background: var(--brand-orange); color: white; padding: 18px 40px; font-size: 1.1rem; width: 100%; box-shadow: 0 6px 15px rgba(255, 123, 57, 0.2); }
+.btn-primary:hover { background: #E86B2D; transform: translateY(-2px); }
+
+/* Cart Shipping Bar */
+.shipping-progress { margin: 20px 0; }
+.progress-labels { font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+.progress-bar { height: 8px; background: #EDF2F7; border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--success); transition: width 0.5s ease; border-radius: 4px; }
+
+/* Cart Upsell */
+.cart-upsell {
+    padding: 16px; background: #FFF5F5; border: 1px solid #FED7D7;
+    border-radius: 8px; margin-top: 20px;
+}
+.upsell-header { font-size: 0.8rem; font-weight: 800; color: #C53030; margin-bottom: 8px; text-transform: uppercase; }
+.upsell-title { font-size: 0.9rem; margin-bottom: 10px; font-weight: 500; }
+.btn-upsell { background: white; border: 1px solid #FED7D7; padding: 8px; font-size: 0.8rem; font-weight: 700; color: #C53030; border-radius: 4px; width: 100%; cursor: pointer; }
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed; bottom: -100px; left: 0; width: 100%;
+    background: white; border-top: 1px solid var(--brand-border);
+    padding: 12px 24px; z-index: 999; transition: var(--transition);
+}
+.sticky-cta.active { bottom: 0; }
+.sticky-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.sticky-info strong { display: block; font-size: 0.85rem; }
+.sticky-info span { font-size: 1.1rem; font-weight: 800; color: var(--brand-navy); }
+.btn-sticky { width: auto; padding: 12px 24px; font-size: 0.9rem; }
+
+/* Side Cart Base (Simplified) */
+.cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; }
+.side-cart { position: fixed; top: 0; right: -400px; width: 400px; height: 100%; background: white; z-index: 2001; transition: var(--transition); padding: 30px; display: flex; flex-direction: column; }
+.side-cart.active { right: 0; }
+.cart-overlay.active { display: block; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-main { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-bullets { display: inline-block; text-align: left; }
+    .bundle-box { flex-direction: column; text-align: center; gap: 15px; }
+    .bundle-price { text-align: center; }
+    .side-cart { width: 100%; right: -100%; }
+}
