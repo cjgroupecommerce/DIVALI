@@ -26,7 +26,13 @@ const translations = {
         'compatibility_h2': 'Universal Tech Support',
         'comp_row_1': 'iPhone 12 through 16 Series',
         'comp_row_2': 'MagSafe & Magnetic Cases',
-        'comp_row_3': 'Other Qi-Enabled Devices'
+        'comp_row_3': 'Other Qi-Enabled Devices',
+        'rev_1_text': '"Was skeptical about the \'metal hook\' but it actually works. My iPhone 15 Pro Max is heavy and previous mounts always tilted down. This one stays put even on rough roads. Shipping took about 8 days to Manchester."',
+        'rev_1_loc': '— United Kingdom',
+        'rev_2_text': '"Magnet is very strong. I use a Magsafe case and it snaps right on. The 15W charging is decent—it kept my phone at 100% while using navigation and music on a 4-hour trip. The box was a bit dented on arrival but the product was fine."',
+        'rev_2_loc': '— Spain',
+        'rev_3_text': '"Bought the Professional Kit with the cable. The cable is actually high quality, not those thin ones you usually get. Super easy to switch between vertical and horizontal for GPS. Really solid for the price."',
+        'rev_3_loc': '— Germany'
     },
     'es': {
         'nav_why': 'Características',
@@ -55,6 +61,12 @@ const translations = {
         'compatibility_h2': 'Soporte Técnico Universal',
         'comp_row_1': 'Series iPhone 12 hasta 16',
         'comp_row_2': 'Fundas MagSafe y Magnéticas',
-        'comp_row_3': 'Otros dispositivos con Qi'
+        'comp_row_3': 'Otros dispositivos con Qi',
+        'rev_1_text': '"Era escéptico con lo del \'gancho metálico\' pero realmente funciona. Mi iPhone 15 Pro Max es pesado y los soportes anteriores siempre se vencían. Este se queda fijo incluso en baches. El envío tardó unos 8 días a Madrid."',
+        'rev_1_loc': '— España',
+        'rev_2_text': '"El imán es muy fuerte. Uso una funda Magsafe y se engancha al momento. La carga de 15W es decente: mantuvo mi móvil al 100% con GPS y música en un viaje de 4 horas. La caja llegó un poco abollada pero el producto estaba perfecto."',
+        'rev_2_loc': '— México',
+        'rev_3_text': '"Compré el Kit Profesional con el cable. El cable es de buena calidad, no como los finos que suelen venir. Es súper fácil cambiar entre vertical y horizontal para el GPS. Muy sólido por el precio."',
+        'rev_3_loc': '— Argentina'
     }
 };
