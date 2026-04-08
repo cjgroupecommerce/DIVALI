@@ -25,27 +25,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const variants = {
         'single': { 
             id: 'single',
-            name: '1x Essential Kit (Black)', 
+            name: '1x Essential Pack', 
             price: 19.95, 
             img: 'assets/Sdec8b644819e49c192abb98e4a00d270a.avif', 
-            comp: '1x Magnetic Charger + Air Vent Mount',
-            idShopify: '53262729150807' // REPLACE WITH NEW ID
+            comp: '1x Charger + Vent Mount',
+            idShopify: '53262729150807'
         },
         'premium': { 
             id: 'premium',
-            name: '1x Pro Kit (Fast Charge)', 
+            name: '1x Professional Kit', 
             price: 29.95, 
             img: 'assets/Saf21dc3181ec40458cc31174cd652275o.avif', 
-            comp: '1x Charger + 1x Fast USB-C Cable',
-            idShopify: '53262729281879' // REPLACE WITH NEW ID
+            comp: '1x Charger + 1x Fast Cable',
+            idShopify: '53262729281879'
         },
         'double': { 
             id: 'double',
-            name: '2x Complete Bundle (Best Value)', 
+            name: '2x Executive Bundle', 
             price: 39.95, 
             img: 'assets/S6b014cb16bce45058062f0d5aa098a39b.avif', 
-            comp: '2x Full Kits (Perfect for 2 Cars)',
-            idShopify: '53262729412951' // REPLACE WITH NEW ID
+            comp: '2x Complete Kits',
+            idShopify: '53262729412951'
         }
     };
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnPrice.textContent = `$${data.price}`;
             stickyPrice.textContent = `$${data.price}`;
             if(mainHeroImg) {
-                mainHeroImg.style.opacity = '0';
+                mainHeroImg.style.opacity = '0.5';
                 setTimeout(() => { mainHeroImg.src = data.img; mainHeroImg.style.opacity = '1'; }, 150);
             }
         });
@@ -109,34 +109,40 @@ document.addEventListener('DOMContentLoaded', () => {
             subtotal += item.price;
             if (item.id === 'single') hasSingle = true;
             html += `
-                <div class="cart-item" style="display:flex; justify-content:space-between; margin-bottom:20px; border-bottom:1px solid #eee; padding-bottom:10px;">
-                    <div>
-                        <h4 style="font-size:0.9rem">${item.name}</h4>
-                        <p style="font-size:0.75rem; color:#666">${item.comp}</p>
-                        <p style="font-weight:700">$${item.price.toFixed(2)}</p>
+                <div class="cart-item">
+                    <img src="${item.img}" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.comp}</p>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                            <span style="font-weight:700">$${item.price.toFixed(2)}</span>
+                            <button class="remove-btn" data-index="${index}">Remove</button>
+                        </div>
                     </div>
-                    <button class="remove-btn" data-index="${index}" style="background:none; border:none; color:red; cursor:pointer">Remove</button>
                 </div>
             `;
         });
 
-        cartItemsContainer.innerHTML = html || `<p style="text-align:center; padding:30px; color:#999">${lang === 'es' ? 'Tu carrito está vacío.' : 'Your cart is empty.'}</p>`;
+        cartItemsContainer.innerHTML = html || `<p style="text-align:center; padding:40px; color:#94A3B8; font-size:0.9rem;">${lang === 'es' ? 'Tu carrito está vacío.' : 'Your cart is currently empty.'}</p>`;
         cartTotalAmount.textContent = `$${subtotal.toFixed(2)}`;
 
         const progress = Math.min((subtotal / 50) * 100, 100);
         progressFill.style.width = `${progress}%`;
         if (subtotal >= 50) {
-            shippingText.innerHTML = lang === 'es' ? "🎉 ¡Envío GRATIS desbloqueado!" : "🎉 Free Shipping Unlocked!";
-            shippingText.style.color = '#38A169';
+            shippingText.innerHTML = lang === 'es' ? "¡Envío GRATUITO desbloqueado!" : "FREE Shipping Unlocked!";
+            shippingText.style.color = '#10B981';
         } else {
-            shippingText.innerHTML = lang === 'es' ? `Te faltan <strong>$${(50 - subtotal).toFixed(2)}</strong> para el Envío Gratis` : `You're <strong>$${(50 - subtotal).toFixed(2)}</strong> away from Free Shipping`;
+            const remaining = (50 - subtotal).toFixed(2);
+            shippingText.innerHTML = lang === 'es' ? `Añade <strong>$${remaining}</strong> más para activar Envío Gratis` : `Add <strong>$${remaining}</strong> more for Free Shipping`;
+            shippingText.style.color = 'var(--text-main)';
         }
 
         if (hasSingle && cart.length === 1) {
             cartUpsell.innerHTML = `
-                <div class="upsell-container" style="background:#f0f7ff; padding:15px; border-radius:10px; margin-top:20px;">
-                    <div class="upsell-header" style="font-weight:700; color:#2b6cb0; margin-bottom:10px;">${t['upsell_title']}</div>
-                    <button class="btn-upsell" id="applyUpsell" style="width:100%; background:#3182ce; color:white; border:none; padding:10px; border-radius:5px; cursor:pointer;">${t['upsell_btn']}</button>
+                <div class="cart-upsell" style="margin:20px 0; border:1px dashed var(--brand-accent); background:#F0F9FF; display:block;">
+                    <div class="upsell-header" style="color:var(--brand-accent)">Limited Time Offer</div>
+                    <p style="font-size:0.85rem; margin-bottom:12px; font-weight:500;">${t['upsell_title']}</p>
+                    <button class="btn btn-primary" id="applyUpsell" style="padding:10px; font-size:0.85rem; border-radius:8px;">${t['upsell_btn']}</button>
                 </div>`;
             document.getElementById('applyUpsell').addEventListener('click', () => {
                 cart = cart.map(item => item.id === 'single' ? variants['double'] : item);
@@ -150,14 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('buyNowBtn').addEventListener('click', () => { cart.push(variants[activeVariantId]); updateCart(); toggleCart(); });
 
     document.getElementById('checkoutBtn').addEventListener('click', () => {
-        if (cart.length === 0) return alert('El carrito está vacío');
+        if (cart.length === 0) return;
         const cartString = cart.map(item => `${item.idShopify}:1`).join(',');
         window.location.href = `https://${MY_SHOPIFY_DOMAIN}/cart/${cartString}?checkout=1`;
     });
 
     window.addEventListener('scroll', () => {
         const buySection = document.getElementById('buy');
-        if (window.scrollY > 500 && (window.scrollY + window.innerHeight) < buySection.offsetTop + 200) {
+        if (window.scrollY > 600 && (window.scrollY + window.innerHeight) < buySection.offsetTop + 300) {
             document.getElementById('stickyCta').classList.add('active');
         } else { document.getElementById('stickyCta').classList.remove('active'); }
     }, { passive: true });
