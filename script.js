@@ -1,10 +1,10 @@
 /* ============================================
-   AeroSpace™ — Travel Pro Interactions (SHOPIFY + i18n READY)
+   UYUXIO™ — Magnetic Fast Charger (SHOPIFY READY)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // === CONFIGURACIÓN i18n (AUTO-DETECCIÓN) ===
+    // === CONFIGURACIÓN i18n ===
     function applyTranslations() {
         const userLang = navigator.language.substring(0, 2); 
         const lang = translations[userLang] ? userLang : 'en'; 
@@ -19,38 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applyTranslations();
 
-    // === CONFIGURACIÓN SHOPIFY (100% FUNCIONAL) ===
+    // === CONFIGURACIÓN SHOPIFY ===
     const MY_SHOPIFY_DOMAIN = 'cueg8x-yb.myshopify.com'; 
 
     const variants = {
-        'weekender': { 
-            id: 'weekender',
-            name: 'The Weekender', 
-            price: 24.95, 
-            img: 'assets/aerospace-hero.png', 
-            comp: '(8 Pack: 3S 3M 2L)',
-            idShopify: '53262729150807'
+        'single': { 
+            id: 'single',
+            name: '1x Essential Kit (Black)', 
+            price: 19.95, 
+            img: 'assets/Sdec8b644819e49c192abb98e4a00d270a.avif', 
+            comp: '1x Magnetic Charger + Air Vent Mount',
+            idShopify: '53262729150807' // REPLACE WITH NEW ID
         },
-        'globetrotter': { 
-            id: 'globetrotter',
-            name: 'The Globetrotter', 
-            price: 34.95, 
-            img: 'assets/aerospace-hero.png', 
-            comp: '(10 Pack: 3S 3M 4L)',
-            idShopify: '53262729281879'
+        'premium': { 
+            id: 'premium',
+            name: '1x Pro Kit (Fast Charge)', 
+            price: 29.95, 
+            img: 'assets/Saf21dc3181ec40458cc31174cd652275o.avif', 
+            comp: '1x Charger + 1x Fast USB-C Cable',
+            idShopify: '53262729281879' // REPLACE WITH NEW ID
         },
-        'family': { 
-            id: 'family',
-            name: 'The Family Explorer', 
-            price: 49.95, 
-            img: 'assets/aerospace-family.png', 
-            comp: '(16 Pack: 6S 5M 5L)',
-            idShopify: '53262729412951'
+        'double': { 
+            id: 'double',
+            name: '2x Complete Bundle (Best Value)', 
+            price: 39.95, 
+            img: 'assets/S6b014cb16bce45058062f0d5aa098a39b.avif', 
+            comp: '2x Full Kits (Perfect for 2 Cars)',
+            idShopify: '53262729412951' // REPLACE WITH NEW ID
         }
     };
 
     let cart = [];
-    let activeVariantId = 'globetrotter';
+    let activeVariantId = 'premium';
 
     // Elements
     const bundleBoxes = document.querySelectorAll('.bundle-box');
@@ -103,11 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let subtotal = 0;
         let html = '';
-        let hasWeekender = false;
+        let hasSingle = false;
 
         cart.forEach((item, index) => {
             subtotal += item.price;
-            if (item.id === 'weekender') hasWeekender = true;
+            if (item.id === 'single') hasSingle = true;
             html += `
                 <div class="cart-item" style="display:flex; justify-content:space-between; margin-bottom:20px; border-bottom:1px solid #eee; padding-bottom:10px;">
                     <div>
@@ -123,23 +123,23 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsContainer.innerHTML = html || `<p style="text-align:center; padding:30px; color:#999">${lang === 'es' ? 'Tu carrito está vacío.' : 'Your cart is empty.'}</p>`;
         cartTotalAmount.textContent = `$${subtotal.toFixed(2)}`;
 
-        const progress = Math.min((subtotal / 30) * 100, 100);
+        const progress = Math.min((subtotal / 50) * 100, 100);
         progressFill.style.width = `${progress}%`;
-        if (subtotal >= 30) {
+        if (subtotal >= 50) {
             shippingText.innerHTML = lang === 'es' ? "🎉 ¡Envío GRATIS desbloqueado!" : "🎉 Free Shipping Unlocked!";
             shippingText.style.color = '#38A169';
         } else {
-            shippingText.innerHTML = lang === 'es' ? `Te faltan <strong>$${(30 - subtotal).toFixed(2)}</strong> para el Envío Gratis` : `You're <strong>$${(30 - subtotal).toFixed(2)}</strong> away from Free Shipping`;
+            shippingText.innerHTML = lang === 'es' ? `Te faltan <strong>$${(50 - subtotal).toFixed(2)}</strong> para el Envío Gratis` : `You're <strong>$${(50 - subtotal).toFixed(2)}</strong> away from Free Shipping`;
         }
 
-        if (hasWeekender && cart.length === 1) {
+        if (hasSingle && cart.length === 1) {
             cartUpsell.innerHTML = `
-                <div class="upsell-container">
-                    <div class="upsell-header">${t['upsell_title']}</div>
-                    <button class="btn-upsell" id="applyUpsell">${t['upsell_btn']}</button>
+                <div class="upsell-container" style="background:#f0f7ff; padding:15px; border-radius:10px; margin-top:20px;">
+                    <div class="upsell-header" style="font-weight:700; color:#2b6cb0; margin-bottom:10px;">${t['upsell_title']}</div>
+                    <button class="btn-upsell" id="applyUpsell" style="width:100%; background:#3182ce; color:white; border:none; padding:10px; border-radius:5px; cursor:pointer;">${t['upsell_btn']}</button>
                 </div>`;
             document.getElementById('applyUpsell').addEventListener('click', () => {
-                cart = cart.map(item => item.id === 'weekender' ? variants['globetrotter'] : item);
+                cart = cart.map(item => item.id === 'single' ? variants['double'] : item);
                 updateCart();
             });
         } else { cartUpsell.innerHTML = ''; }
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('checkoutBtn').addEventListener('click', () => {
         if (cart.length === 0) return alert('El carrito está vacío');
         const cartString = cart.map(item => `${item.idShopify}:1`).join(',');
-        window.location.href = `https://${MY_SHOPIFY_DOMAIN}/cart/${cartString}`;
+        window.location.href = `https://${MY_SHOPIFY_DOMAIN}/cart/${cartString}?checkout=1`;
     });
 
     window.addEventListener('scroll', () => {
