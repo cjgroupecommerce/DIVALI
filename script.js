@@ -5,10 +5,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // === CONFIGURACIÓN i18n ===
-    function applyTranslations() {
+    function getLang() {
         const userLang = navigator.language.substring(0, 2); 
-        const lang = translations[userLang] ? userLang : 'en'; 
-        
+        return translations[userLang] ? userLang : 'en';
+    }
+
+    function applyTranslations() {
+        const lang = getLang();
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang][key]) {
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         price: 29.95, 
         img: 'assets/Sdec8b644819e49c192abb98e4a00d270a.avif', 
         comp: 'Full Kit: Charger + Vent Mount + Cable',
-        idShopify: '53262729281879' // Professional Kit ID
+        idShopify: '53262729281879' 
     };
 
     let cart = [];
@@ -42,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotalAmount = document.getElementById('cartTotalAmount');
     const progressFill = document.getElementById('progressFill');
     const shippingText = document.getElementById('shippingText');
-    const cartUpsell = document.getElementById('cartUpsell');
 
     if(stickyPrice) stickyPrice.textContent = `$${product.price}`;
 
@@ -58,8 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartOverlay.addEventListener('click', toggleCart);
 
     function updateCart() {
-        const userLang = navigator.language.substring(0, 2);
-        const lang = translations[userLang] ? userLang : 'en';
+        const lang = getLang();
         const t = translations[lang];
 
         cartCount.textContent = cart.length;
@@ -78,14 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p>${item.comp}</p>
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
                             <span style="font-weight:700">$${item.price.toFixed(2)}</span>
-                            <button class="remove-btn" data-index="${index}">Remove</button>
+                            <button class="remove-btn" data-index="${index}">${lang === 'es' ? 'Eliminar' : (lang === 'fr' ? 'Supprimer' : (lang === 'de' ? 'Entfernen' : 'Remove'))}</button>
                         </div>
                     </div>
                 </div>
             `;
         });
 
-        cartItemsContainer.innerHTML = html || `<p style="text-align:center; padding:40px; color:#94A3B8; font-size:0.9rem;">${lang === 'es' ? 'Tu carrito está vacío.' : 'Your cart is currently empty.'}</p>`;
+        cartItemsContainer.innerHTML = html || `<p style="text-align:center; padding:40px; color:#94A3B8; font-size:0.9rem;">${t['cart_empty']}</p>`;
         cartTotalAmount.textContent = `$${subtotal.toFixed(2)}`;
 
         // Progress bar (Threshold $50 for Free Shipping)
@@ -94,12 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (subtotal >= 50) {
             if(shippingText) {
-                shippingText.innerHTML = lang === 'es' ? "¡Envío GRATUITO desbloqueado!" : "FREE Shipping Unlocked!";
+                shippingText.innerHTML = t['cart_unlocked'];
                 shippingText.style.color = '#10B981';
             }
         } else if(shippingText) {
             const remaining = (50 - subtotal).toFixed(2);
-            shippingText.innerHTML = lang === 'es' ? `Añade <strong>$${remaining}</strong> más para activar Envío Gratis` : `Add <strong>$${remaining}</strong> more for Free Shipping`;
+            shippingText.innerHTML = `${t['cart_remaining_pos']}<strong>$${remaining}</strong>${t['cart_remaining_neg']}`;
             shippingText.style.color = 'var(--text-main)';
         }
 
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const buySection = document.getElementById('buy');
-        if (window.scrollY > 600 && (window.scrollY + window.innerHeight) < buySection.offsetTop + 400) {
+        if (buySection && window.scrollY > 600 && (window.scrollY + window.innerHeight) < buySection.offsetTop + 400) {
             document.getElementById('stickyCta').classList.add('active');
         } else { document.getElementById('stickyCta').classList.remove('active'); }
     }, { passive: true });
