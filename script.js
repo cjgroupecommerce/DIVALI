@@ -1,5 +1,5 @@
 /* ============================================
-   UYUXIO™ — Magnetic Fast Charger (SHOPIFY READY)
+   FluxoDrive™ — Magnetic Fast Charger (SHOPIFY READY)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const product = { 
         id: 'premium',
-        name: 'UYUXIO™ Elite Magnetic Pack', 
+        name: 'FluxoDrive™ Elite Magnetic Pack', 
         price: 29.95, 
         img: 'assets/Sdec8b644819e49c192abb98e4a00d270a.avif', 
         comp: 'Full Kit: Charger + Vent Mount + Cable',
