@@ -418,6 +418,43 @@ p {
 }
 
 /* --- Cart & Sticky --- */
+/* Bundle Selector */
+.bundle-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bundle-option {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--light);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.bundle-option.active {
+    background: var(--white);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-soft);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+}
+
 .sticky-cta {
     position: fixed;
     bottom: 32px;
@@ -477,6 +514,46 @@ p {
     display: block;
 }
 
+/* Cart Item Styling */
+.cart-item {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+}
+
+.cart-item img {
+    display: none !important; /* Force hide any images in cart items */
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.cart-item-info p {
+    font-size: 0.85rem;
+    color: var(--dark-muted);
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--error);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    padding: 0;
+}
+
+
 /* Footer */
 footer {
     padding: 80px 0;
@@ -486,12 +563,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 900px) {
-    .bento-grid {
-        display: flex;
-        flex-direction: column;
-    }
     .product-hero {
         grid-template-columns: 1fr;
+        padding: 40px;
+        gap: 40px;
     }
     .hero h1 {
         font-size: 3.5rem;
@@ -499,16 +574,103 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .section-container {
-        padding: 0 24px;
+    :root {
+        --container: 100%;
+        --radius-xl: 20px;
     }
+
+    .section-container {
+        padding: 0 20px;
+    }
+
+    .navbar {
+        height: 58px;
+    }
+
     .nav-links {
         display: none;
     }
-    .hero h1 {
-        font-size: 2.8rem;
+
+    .hero {
+        padding: 100px 0 60px;
     }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -0.04em;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .hero-badge {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .features-section,
+    .compatibility-section,
+    .reviews-section,
+    .buy-section {
+        padding: 60px 0;
+    }
+
     .spec-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .spec-item {
+        padding: 20px;
+        background: var(--light);
+        border-radius: var(--radius-md);
+    }
+
+    .reviews-slider {
+        gap: 16px;
+    }
+
+    .review-card {
+        min-width: 280px;
+        padding: 24px;
+    }
+
+    .product-hero {
+        padding: 30px 20px;
+    }
+
+    .product-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-large {
+        padding: 16px 30px;
+        font-size: 1rem;
+    }
+
+    .sticky-cta {
+        bottom: 16px;
+        width: calc(100% - 32px);
+        padding: 10px 20px;
+        border-radius: 16px;
+    }
+
+    .sticky-cta strong {
+        font-size: 0.8rem;
+    }
+
+    .side-cart {
+        padding: 30px 20px;
+    }
+
+    .cart-item {
+        padding: 16px 0;
     }
 }
+
