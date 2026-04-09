@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIVALVI™ — 15W Magnetic Wireless Car Charger</title>
-    <meta name="description" content="Premium 15W Fast Wireless Car Charger with N52 Magnets. Minimalist design, maximal stability.">
+    <title>DIVALVI™ — Cargador Magnético 15W para Coche</title>
+    <meta name="description" content="Cargador magnético premium de 15W con sujeción de gancho metálico. Estabilidad absoluta para tu smartphone en el coche.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <!-- Iconos de marca optimizados -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/logo.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/logo.png">
     <link rel="apple-touch-icon" href="assets/logo.png">
 </head>
 <body>
@@ -19,139 +16,258 @@
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo" style="gap:15px;">
-                <img src="assets/logo.png" alt="DIVALVI Logo" style="height:42px; width:auto; display:block;">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo.png" alt="DIVALVI Logo" style="height:32px; width:auto;">
                 DIVALVI™
             </a>
             <ul class="nav-links">
-                <li><a href="#features" data-i18n="nav_why">Features</a></li>
-                <li><a href="#compatibility" data-i18n="nav_sizes">Compatibility</a></li>
-                <li><a href="#reviews" data-i18n="nav_reviews">Reviews</a></li>
-                <li><a href="#buy" data-i18n="nav_buy">Shop Now</a></li>
+                <li><a href="#features" data-i18n="nav_why">Características</a></li>
+                <li><a href="#compatibility" data-i18n="nav_sizes">Compatibilidad</a></li>
+                <li><a href="#reviews" data-i18n="nav_reviews">Reseñas</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-toggle" id="cartToggle" style="background:none; border:none; cursor:pointer; position:relative;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-                    <span class="cart-count" style="position:absolute; top:-8px; right:-8px; background:var(--accent); color:white; font-size:10px; padding:2px 6px; border-radius:10px; font-weight:800; display:none;">0</span>
+                <button class="cart-toggle" id="cartToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                    <span class="cart-count">0</span>
                 </button>
+                <a href="#buy" class="btn btn-primary btn-nav" data-i18n="nav_buy">Comprar</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- 1. HERO SECTION -->
     <section class="hero" id="hero">
         <div class="section-container">
-            <span class="hero-badge" data-i18n="hero_badge">Elite Series — N52 Magnetic Tech</span>
-            <h1 data-i18n="hero_h1">Snap. Charge. Go.</h1>
-            <p data-i18n="hero_p">The most stable magnetic wireless charger for your car. High-speed 15W charging with a precision-engineered metal hook mount.</p>
-            <div class="hero-actions">
-                <a href="#buy" class="btn btn-primary btn-large" style="max-width:300px;" data-i18n="hero_btn">Upgrade Your Ride Now</a>
+            <span class="hero-badge" data-i18n="hero_badge">Envío gratuito a toda España | 30 días de prueba</span>
+            <h1 data-i18n="hero_h1">Conducción fluida. Estabilidad absoluta.</h1>
+            <p data-i18n="hero_p">DIVALVI™ combina carga rápida de 15W con un sistema de fijación técnica que mantiene tu dispositivo inmóvil, incluso en las carreteras más exigentes.</p>
+            
+            <div class="hero-features-list">
+                <span data-i18n="hero_bullet_1">✓ Sujeción mecánica mediante gancho de acero.</span>
+                <span data-i18n="hero_bullet_2">✓ Carga magnética alineada (Qi/MagSafe).</span>
+                <span data-i18n="hero_bullet_3">✓ Rotación 360º con bloqueo de posición.</span>
             </div>
-            <div class="hero-image tech-banner" style="margin-top:80px; position:relative;">
-                <div class="hero-grid">
-                    <img src="assets/porsche 1.png" alt="DIVALVI™ Porsche Detail" class="hero-img-split" style="border-radius: var(--radius-lg); box-shadow: 0 40px 100px rgba(0,0,0,0.2);">
-                    <img src="assets/porsche 2.png" alt="DIVALVI™ Porsche Dashboard" class="hero-img-split" style="border-radius: var(--radius-lg); box-shadow: 0 40px 100px rgba(0,0,0,0.2);">
-                </div>
-                <div class="client-badge">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                    <span data-i18n="hero_client_porsche">Preferred by Porsche GT3 owners</span>
-                </div>
+
+            <div class="hero-actions">
+                <a href="#buy" class="btn btn-primary btn-large" data-i18n="hero_btn">Configurar mi pedido →</a>
+            </div>
+
+            <div class="hero-image-main">
+                <img src="assets/porsche 1.png" alt="DIVALVI™ Hero Image" class="main-img">
                 <div class="tech-overlay"></div>
             </div>
         </div>
     </section>
 
-    <!-- TRUST LOGOS -->
-    <div class="trust-bar">
-        <div class="section-container trust-container">
-            <div class="trust-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span data-i18n="trust_guarantee">30-Day Evaluation Period</span>
-            </div>
-            <div class="trust-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                <span data-i18n="trust_shipping">International Tracked Shipping</span>
-            </div>
-            <div class="trust-item">
-                <div style="display:flex; gap:2px; color:#fbb; font-weight:900;">★★★★★</div>
-                <span data-i18n="trust_rating">4.9/5 Average User Rating</span>
+    <!-- 2. BLOQUE DE PROBLEMA -->
+    <section class="problem-section" id="problem">
+        <div class="section-container">
+            <div class="bento-card problem-card">
+                <span class="badge-mini" data-i18n="problem_tag">Seguridad al volante</span>
+                <h2 data-i18n="problem_h2">Deja de pelearte con tu soporte mientras conduces.</h2>
+                <p data-i18n="problem_p">Los soportes de ventosa se despegan con el calor. Las pinzas de plástico vibran y terminan cediendo. Un móvil suelto no es solo molesto, es una distracción peligrosa. Necesitas una solución que no se mueva, pase lo que pase.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- FEATURES SECTION -->
+    <!-- 3. BLOQUE DE SOLUCIÓN / BENEFICIOS -->
     <section class="features-section" id="features">
         <div class="section-container">
             <div class="section-header">
-                <span data-i18n="pas_tag">The Modern Driver's Problem</span>
-                <h2 data-i18n="pas_h2">Struggling with cables while driving? No more.</h2>
+                <span class="badge-mini" data-i18n="feat_tag">Ingeniería DIVALVI™</span>
             </div>
-            
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:40px;">
-                <div class="feature-card" style="text-align:center;">
-                    <img src="assets/S07213772fcf744f6b74de7618ee03f824.avif" alt="Stability" style="width:100%; border-radius:var(--radius-lg); margin-bottom:24px;">
-                    <h3 data-i18n="feat_1_h3" style="margin-bottom:12px;">Ultimate Stability</h3>
-                    <p data-i18n="feat_1_p">Our patented metal hook design locks onto your air vent, ensuring your phone stays upright incluso en baches.</p>
+            <div class="bento-grid">
+                <div class="bento-card card-span-8">
+                    <h3 data-i18n="feat_1_h3">Fijación Mecánica Pro</h3>
+                    <p data-i18n="feat_1_p">A diferencia de los clips de plástico, nuestro gancho metálico se ancla a la rejilla con precisión milimétrica. Una vez apretado, el soporte y el coche son una sola pieza.</p>
+                    <img src="assets/S07213772fcf744f6b74de7618ee03f824.avif" alt="Metal Hook Detail">
                 </div>
-                <div class="feature-card" style="text-align:center;">
-                    <img src="assets/Sdd79c1ee98354ec59be2ae27529352fcv.avif" alt="Magnetic" style="width:100%; border-radius:var(--radius-lg); margin-bottom:24px;">
-                    <h3 data-i18n="feat_2_h3" style="margin-bottom:12px;">Intelligent N52 Core</h3>
-                    <p data-i18n="feat_2_p">Precision-aligned magnets provide massive holding power for any smartphone.</p>
+                <div class="bento-card card-span-4">
+                    <h3 data-i18n="feat_2_h3">Carga Inteligente de 15W</h3>
+                    <p data-i18n="feat_2_p">Optimizado para evitar el sobrecalentamiento. Carga tu dispositivo a máxima velocidad mientras usas el GPS.</p>
                 </div>
-                <div class="feature-card" style="text-align:center;">
-                    <img src="assets/Saf21dc3181ec40458cc31174cd652275o.avif" alt="Charging" style="width:100%; border-radius:var(--radius-lg); margin-bottom:24px;">
-                    <h3 data-i18n="feat_3_h3" style="margin-bottom:12px;">Optimized 15W Flow</h3>
-                    <p data-i18n="feat_3_p">Smart induction technology delivers the maximum compatible charge without overheating.</p>
+                <div class="bento-card card-span-4">
+                    <h3 data-i18n="feat_3_h3">Diseño Minimalista</h3>
+                    <p data-i18n="feat_3_p">Acabado en negro mate que se integra orgánicamente en el interior de cualquier vehículo.</p>
+                </div>
+                <div class="bento-card card-span-8">
+                    <h3 data-i18n="feat_4_h3">Alineación Magnética Instantánea</h3>
+                    <p data-i18n="feat_4_p">Olvida los cables. Solo acerca tu teléfono y los imanes N52 harán el resto. Colocación perfecta en menos de 1 segundo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COMPATIBILITY -->
-    <section class="compatibility-section" id="compatibility" style="background: var(--light);">
+    <!-- 4. BLOQUE DE CÓMO FUNCIONA -->
+    <section class="how-it-works">
         <div class="section-container">
             <div class="section-header">
-                <h2 data-i18n="compatibility_h2">Universal Tech Support</h2>
+                <span class="badge-mini" data-i18n="how_tag">Instalación en segundos</span>
+                <h2 data-i18n="how_h2">Simplicidad técnica.</h2>
             </div>
-            <div class="spec-grid" style="grid-template-columns: repeat(3, 1fr); gap:40px; text-align:center;">
-                <div class="spec-item">
-                    <h4 data-i18n="comp_mode_1">Native Magnetic</h4>
-                    <p data-i18n="comp_row_1">iPhone 12 through 16 Series</p>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <h4 data-i18n="how_step_1_h">Ancla</h4>
+                    <p data-i18n="how_step_1_p">Introduce el gancho metálico en la rejilla de ventilación.</p>
                 </div>
-                <div class="spec-item">
-                    <h4 data-i18n="comp_mode_2">Integrated</h4>
-                    <p data-i18n="comp_row_2">MagSafe Compatible Cases</p>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <h4 data-i18n="how_step_2_h">Ajusta</h4>
+                    <p data-i18n="how_step_2_p">Gira la rosca para bloquear el soporte con firmeza.</p>
                 </div>
-                <div class="spec-item">
-                    <h4 data-i18n="comp_mode_3">Magnetic Ring</h4>
-                    <p data-i18n="comp_row_3">Samsung, Pixel & Other Qi Phones</p>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <h4 data-i18n="how_step_3_h">Snap</h4>
+                    <p data-i18n="how_step_3_p">Acerca tu dispositivo y comienza tu ruta.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REVIEWS -->
+    <!-- 5. BLOQUE DE COMPATIBILIDAD -->
+    <section class="compatibility-section" id="compatibility">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="badge-mini" data-i18n="comp_tag">Soporte Universal</span>
+                <h2 data-i18n="comp_h2">Diseñado para la tecnología de hoy.</h2>
+            </div>
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <h4 data-i18n="comp_mode_1">iPhone (Magsafe)</h4>
+                    <p data-i18n="comp_row_1">Series 12 hasta 16 (con o sin funda MagSafe).</p>
+                </div>
+                <div class="spec-item">
+                    <h4 data-i18n="comp_mode_2">Fundas MagSafe</h4>
+                    <p data-i18n="comp_row_2">Funciona con cualquier funda que incluya imanes.</p>
+                </div>
+                <div class="spec-item">
+                    <h4 data-i18n="comp_mode_3">Android / Otros Qi</h4>
+                    <p data-i18n="comp_row_3">Compatible mediante el anillo magnético incluido.</p>
+                </div>
+            </div>
+            <p class="comp-note" data-i18n="comp_note">Nota: Recomendamos fundas con imanes integrados para una experiencia óptima si la funda supera los 2mm.</p>
+        </div>
+    </section>
+
+    <!-- 6. BLOQUE DE PRUEBA SOCIAL -->
     <section class="reviews-section" id="reviews">
         <div class="section-container">
-            <h2 style="text-align:center; margin-bottom:60px;" data-i18n="review_h2">Trusted by 10,000+ Drivers</h2>
-            <div class="reviews-slider">
+            <h2 class="section-title" style="text-align:center; margin-bottom:60px;" data-i18n="review_h2">La opinión de quienes ya lo conducen</h2>
+            <div class="reviews-grid">
                 <div class="review-card">
-                    <p class="review-text" data-i18n="rev_1_text">"Was skeptical about the 'metal hook' but it actually works. My iPhone 15 Pro Max stays put."</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text" data-i18n="rev_1_text">"Realmente funciona. Mi iPhone 15 Pro Max es pesado y se queda fijo incluso pasando por baches o resaltos. El gancho metálico marca la diferencia."</p>
                     <div class="review-author">
-                        <div class="author-avatar" style="background:#e0e0e0; display:flex; align-items:center; justify-content:center; font-weight:700;">SH</div>
-                        <div class="author-info">
-                            <h5 data-i18n="rev_1_name">Steve H.</h5>
-                            <span data-i18n="rev_1_loc">— United Kingdom</span>
-                        </div>
+                        <span class="author-name" data-i18n="rev_1_name">Javier R.</span>
+                        <span class="author-loc" data-i18n="rev_1_loc">— Madrid</span>
                     </div>
                 </div>
                 <div class="review-card">
-                    <p class="review-text" data-i18n="rev_2_text">"Magnet is very strong. I use a Magsafe case and it snaps right on."</p>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text" data-i18n="rev_2_text">"El imán es muy fuerte. Uso funda Magsafe y se acopla al instante. La carga mantuvo mi móvil al 100% con GPS puesto todo el viaje."</p>
                     <div class="review-author">
-                        <div class="author-avatar" style="background:#e0e0e0; display:flex; align-items:center; justify-content:center; font-weight:700;">EG</div>
-                        <div class="author-info">
-                            <h5 data-i18n="rev_2_name">Elena G.</h5>
-                            <span data-i18n="rev_2_loc">— Spain</span>
+                        <span class="author-name" data-i18n="rev_2_name">Elena G.</span>
+                        <span class="author-loc" data-i18n="rev_2_loc">— Valencia</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text" data-i18n="rev_3_text">"Muy fácil de instalar. Me gusta que no ocupa espacio y el diseño negro mate queda genial con el salpicadero de mi coche."</p>
+                    <div class="review-author">
+                        <span class="author-name" data-i18n="rev_3_name">Nicolás S.</span>
+                        <span class="author-loc" data-i18n="rev_3_loc">— Sevilla</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text" data-i18n="rev_4_text">"He pasado por varios soportes baratos que acababan cediendo. Este se nota robusto desde que lo sacas de la caja."</p>
+                    <div class="review-author">
+                        <span class="author-name" data-i18n="rev_4_name">Carlos M.</span>
+                        <span class="author-loc" data-i18n="rev_4_loc">— Barcelona</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. BLOQUE DE DIFERENCIACIÓN -->
+    <section class="comparison-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="badge-mini" data-i18n="tech_tag">Comparativa Técnica</span>
+                <h2 data-i18n="tech_h2">El Estándar de Excelencia.</h2>
+            </div>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="feature-col">Característica</div>
+                    <div class="us-col" data-i18n="tab_us">DIVALVI™</div>
+                    <div class="others-col" data-i18n="tab_others">Soportes Genéricos</div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col" data-i18n="tab_feat_1">Gancho de acero ajustable</div>
+                    <div class="us-col">✓</div>
+                    <div class="others-col">Plástico / Clip</div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col" data-i18n="tab_feat_2">Nula (Bloqueo mecánico)</div>
+                    <div class="us-col">✓</div>
+                    <div class="others-col">Alta (Vibración)</div>
+                </div>
+                <div class="table-row">
+                    <div class="feature-col" data-i18n="tab_feat_3">15W Real con gestión térmica</div>
+                    <div class="us-col">✓</div>
+                    <div class="others-col">Calentamiento excesivo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. BLOQUE DE OFERTA -->
+    <section class="buy-section" id="buy">
+        <div class="section-container">
+            <div class="offer-container">
+                <div class="offer-visual">
+                    <img src="assets/S6b014cb16bce45058062f0d5aa098a39b.avif" alt="DIVALVI™ Product">
+                </div>
+                <div class="offer-details">
+                    <span class="badge-mini" data-i18n="product_special">CONFIGURA TU PACK</span>
+                    <h2 data-i18n="product_name">DIVALVI™ Magnetic Pack</h2>
+                    
+                    <div class="bundle-selector">
+                        <div class="bundle-option active" data-price="22" data-variant="53272784208215" data-qty="1">
+                            <div class="bundle-info">
+                                <h4 data-i18n="bundle_1_name">Pack Individual (Essential)</h4>
+                                <p data-i18n="bundle_1_desc">Ideal para tu vehículo principal.</p>
+                            </div>
+                            <div class="bundle-price">22,00€</div>
+                        </div>
+                        <div class="bundle-option" data-price="37.40" data-variant="53272784208215" data-qty="2">
+                            <div class="popular-badge" data-i18n="bundle_most_popular">OPCIÓN RECOMENDADA</div>
+                            <div class="bundle-info">
+                                <h4 data-i18n="bundle_2_name">Pack Doble (Duo Drive)</h4>
+                                <p data-i18n="bundle_2_desc">La opción inteligente para dos coches o regalo.</p>
+                            </div>
+                            <div class="bundle-price">37,40€</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large" id="buyNowBtn" data-i18n="product_btn">Conseguir mi pack ahora →</button>
+                    
+                    <div class="trust-icons-grid">
+                        <div class="trust-icon-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span data-i18n="trust_guarantee">30 días de prueba</span>
+                        </div>
+                        <div class="trust-icon-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                            <span data-i18n="trust_shipping">Envío con seguimiento</span>
+                        </div>
+                        <div class="trust-icon-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                            <span data-i18n="trust_secure">Pago seguro</span>
                         </div>
                     </div>
                 </div>
@@ -159,41 +275,30 @@
         </div>
     </section>
 
-    <!-- BUY SECTION -->
-    <section class="buy-section" id="buy" style="background:var(--light);">
+    <!-- 10. FAQ -->
+    <section class="faq-section">
         <div class="section-container">
-            <div class="product-hero" style="background:white; padding:60px; border-radius:var(--radius-xl); box-shadow:var(--shadow-card);">
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:60px; align-items:center;">
-                    <img src="assets/S6b014cb16bce45058062f0d5aa098a39b.avif" alt="DIVALVI™ Elite" style="width:100%; border-radius:var(--radius-lg);">
-                    <div class="product-details">
-                        <span class="hero-badge" data-i18n="product_special">Special Offer</span>
-                        <h2 data-i18n="product_name_single" style="font-size:2.5rem;">DIVALVI™ Elite Magnetic Pack</h2>
-                        <div class="bundle-selector" style="margin: 24px 0;">
-                            <div class="bundle-option active" data-price="22" data-variant="53272784208215" data-qty="1" data-name="Single Pack" data-desc="1x DIVALVI™">
-                                <div style="flex:1;">
-                                    <div style="font-weight:700;" data-i18n="bundle_1_name">Single Pack</div>
-                                    <div style="font-size:0.8rem; opacity:0.7;" data-i18n="bundle_1_desc">1x DIVALVI™ Elite Pack</div>
-                                </div>
-                                <div style="text-align:right;">
-                                    <div style="font-weight:700;">22€</div>
-                                    <div style="font-size:0.65rem; color:#10B981; font-weight:700; letter-spacing:0.02em;">+ ENVÍO GRATIS</div>
-                                </div>
-                            </div>
-                            <div class="bundle-option" data-price="37.40" data-variant="53272784208215" data-qty="2" data-name="Value Double Pack" data-desc="2x DIVALVI™ (2nd -30%)" style="margin-top:12px; position:relative;">
-                                <div class="popular-badge" data-i18n="bundle_most_popular">BEST VALUE</div>
-                                <div style="flex:1;">
-                                    <div style="font-weight:700;" data-i18n="bundle_2_name">Value Double Pack</div>
-                                    <div style="font-size:0.8rem; opacity:0.7;" data-i18n="bundle_2_desc">2x DIVALVI™ - 30% OFF on 2nd</div>
-                                </div>
-                                <div style="text-align:right;">
-                                    <div style="font-weight:700;">37.40€</div>
-                                    <div style="font-size:0.65rem; color:#10B981; font-weight:700; letter-spacing:0.02em;">+ ENVÍO GRATIS</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button class="btn btn-primary btn-large" id="buyNowBtn" data-i18n="product_btn">Get Your Elite Pack Now</button>
-                    </div>
+            <h2 style="text-align:center; margin-bottom:48px;" data-i18n="faq_h2">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4 data-i18n="faq_1_q">¿Se caerá si paso por un bache fuerte?</h4>
+                    <p data-i18n="faq_1_a">No. El sistema de gancho metálico es mecánico, no por presión. Una vez bloqueado, es físicamente imposible que se suelte de la rejilla.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq_2_q">¿Daña la rejilla de ventilación?</h4>
+                    <p data-i18n="faq_2_a">En absoluto. El gancho está recubierto de silicona técnica para proteger las pestañas de tu coche mientras mantiene la firmeza.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq_3_q">Mi coche tiene rejillas verticales, ¿sirve?</h4>
+                    <p data-i18n="faq_3_a">Sí, el diseño del gancho es compatible con rejillas horizontales y verticales estándar.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq_4_q">¿Funciona con fundas normales?</h4>
+                    <p data-i18n="faq_4_a">Funciona con fundas finas (<2mm). Para fundas más gruesas, incluimos un anillo magnético.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq_5_q">¿Calienta mucho el teléfono?</h4>
+                    <p data-i18n="faq_5_a">Nuestro chip inteligente gestiona la energía para evitar picos de calor dañinos.</p>
                 </div>
             </div>
         </div>
@@ -202,37 +307,40 @@
     <!-- FOOTER -->
     <footer>
         <div class="section-container">
-            <p data-i18n="footer_copy">© 2026 DIVALVI™ Tech. Professional Driver Experience.</p>
+            <p data-i18n="footer_copy">© 2026 DIVALVI™ Tech. Ingeniería para el conductor profesional.</p>
         </div>
     </footer>
 
     <!-- STICKY CTA -->
     <div class="sticky-cta" id="stickyCta">
-        <div>
+        <div class="sticky-info">
             <strong data-i18n="sticky_name">DIVALVI™ Charger</strong>
-            <div id="stickyPrice" style="color:var(--accent); font-weight:700;">22€</div>
+            <div id="stickyPrice" class="sticky-price">22,00€</div>
         </div>
-        <button class="btn btn-primary" id="stickyBuyBtn" data-i18n="sticky_btn">Buy Now</button>
+        <button class="btn btn-primary" id="stickyBuyBtn" data-i18n="sticky_btn">Comprar ahora</button>
     </div>
 
     <!-- CART SIDEBAR -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="side-cart" id="sideCart">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;">
-            <h3 data-i18n="cart_title">Shopping Cart</h3>
-            <button id="cartClose" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+        <div class="cart-header">
+            <h3 data-i18n="cart_title">Tu Selección</h3>
+            <button id="cartClose">&times;</button>
         </div>
-        <div id="cartItems" style="flex:1; overflow-y:auto;"></div>
+        <div id="cartItems" class="cart-items"></div>
         <div class="cart-footer">
-            <div style="display:flex; justify-content:space-between; margin-bottom:20px; font-weight:700;">
-                <span data-i18n="cart_subtotal">Subtotal:</span>
-                <span id="cartTotalAmount"></span>
+            <div class="shipping-bar-container">
+                <div id="shippingText" class="shipping-text"></div>
+                <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
             </div>
-            <button class="btn btn-primary btn-large" id="checkoutBtn" data-i18n="checkout_btn">Proceed to Checkout</button>
+            <div class="subtotal-row">
+                <span data-i18n="cart_subtotal">Subtotal:</span>
+                <span id="cartTotalAmount">0,00€</span>
+            </div>
+            <button class="btn btn-primary btn-large" id="checkoutBtn" data-i18n="checkout_btn">Tramitar Pedido Seguro</button>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
