@@ -1,5 +1,5 @@
 /* ============================================
-   FluxoDrive™ — Magnetic Fast Charger (SHOPIFY READY)
+   DIVALVI™ — Magnetic Fast Charger (SHOPIFY READY)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const product = { 
         id: 'premium',
-        name: 'FluxoDrive™ Elite Magnetic Pack', 
+        name: 'DIVALVI™ Elite Magnetic Pack', 
         price: 22.00, 
         img: 'assets/Sdec8b644819e49c192abb98e4a00d270a.avif', 
         comp: 'Full Kit: Charger + Vent Mount + Cable',
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedBundle = {
         name: 'Single Pack',
         price: 22.00,
-        desc: '1x FluxoDrive™ Elite Pack',
+        desc: '1x DIVALVI™ Elite Pack',
         variant: '53272784208215',
         qty: 1
     };
